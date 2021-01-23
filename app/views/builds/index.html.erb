@@ -3,7 +3,7 @@
 <ul>
   <% @builds.each do |build| %>
     <li>
-      <%= build.name %>
+        <%= link_to build.name, build %>
     </li>
     <li>
       <%= build.id_build %>

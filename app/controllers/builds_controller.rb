@@ -35,6 +35,13 @@ class BuildsController < ApplicationController
     end
   end
 
+  def destroy
+    @build = Build.find(params[:id])
+    @build.destroy
+
+    redirect_to root_path
+  end
+
   private
   def build_params
     params.require(:build).permit(:name, :id_build, :is_like)

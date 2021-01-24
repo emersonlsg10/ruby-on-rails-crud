@@ -6,4 +6,7 @@
 
 <ul>
   <li><%= link_to "Edit", edit_build_path(@build) %></li>
+    <li><%= link_to "Destroy", build_path(@build),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
 </ul>

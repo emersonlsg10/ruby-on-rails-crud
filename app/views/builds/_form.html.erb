@@ -1,0 +1,29 @@
+<%= form_with model: build do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% build.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+<div>
+    <%= form.label :is_like %><br>
+    <%= form.text_field :is_like %><br>
+    <% build.errors.full_messages_for(:is_like).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :id_build %><br>
+    <%= form.number_field :id_build %><br>
+    <% build.errors.full_messages_for(:id_build).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

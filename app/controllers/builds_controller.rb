@@ -21,6 +21,20 @@ class BuildsController < ApplicationController
     end
   end
 
+  def edit
+    @build = Build.find(params[:id])
+  end
+
+  def update
+    @build = Build.find(params[:id])
+
+    if @build.update(build_params)
+      redirect_to @build
+    else
+      render :edit
+    end
+  end
+
   private
   def build_params
     params.require(:build).permit(:name, :id_build, :is_like)
